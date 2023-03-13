@@ -89,8 +89,25 @@ var finances = [
  var months =finances.length
  console.log("Total Months: " + finances.length );
 
+//  net totoal
 var netTotal = 0
 for( var i = 0; i< finances.length; i++){
   netTotal +=  finances[i][1];
 }
-console.log('Total:' +netTotal)
+console.log('Total: $' +netTotal)
+
+// max increase  in profit
+
+var maxIncrease = 0;
+var maxIncreaseDate = '';
+
+
+for (var i = 1; i < finances.length; i++) {
+  var increase = finances[i][1] - finances[i-1][1];
+  if (increase > maxIncrease) {
+    maxIncrease = increase;
+    maxIncreaseDate = finances[i][0];
+  }
+}
+
+console.log('Greatest increase in profits/losses : ' + maxIncreaseDate  +  '$' + maxIncrease );
