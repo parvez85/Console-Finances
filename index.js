@@ -88,6 +88,9 @@ var finances = [
 ];
  var months =finances.length
  console.log("Total Months: " + finances.length );
- for( var i = 0; i< finances.length; i++){
-  console.log( finances[i][0])
- }
+
+var netTotal = 0
+for( var i = 0; i< finances.length; i++){
+  netTotal +=  finances[i][1];
+}
+console.log('Total:' +netTotal)
