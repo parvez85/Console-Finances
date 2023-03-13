@@ -96,7 +96,7 @@ for( var i = 0; i< finances.length; i++){
 }
 console.log('Total: $' +netTotal)
 
-// max increase  in profit
+// max increase in profit
 
 var maxIncrease = 0;
 var maxIncreaseDate = '';
@@ -110,4 +110,33 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
-console.log('Greatest increase in profits/losses : ' + maxIncreaseDate  +  '$' + maxIncrease );
+console.log('Greatest increase in profits/losses : ' + maxIncreaseDate  + ' with a Inecrease of $' + maxIncrease );
+
+// // max Decrease in profit
+
+var maxDecrease = 0;
+var maxIncreaseDate = '';
+
+for( var i = 1; i<finances.length; i++){
+  var decrease = finances[i][1] - finances[i-1][1];
+  if (decrease < maxDecrease) {
+    maxDecrease = decrease;
+    maxDecreaseDate = finances[i][0];
+ }
+}
+console.log('Greatest Decrease in profits/losses : ' + maxDecreaseDate + ' with a decrease of $' + Math.abs(maxDecrease));
+
+// average 
+
+var sumChanges = 0;
+var countChanges = 0;
+
+for (var i = 1; i < finances.length; i++) {
+  var change = finances[i][1] - finances[i-1][1];
+  sumChanges += change;
+  countChanges++;
+}
+
+var averageChange = sumChanges / countChanges;
+
+console.log('Average change : $' + averageChange.toFixed(2));
