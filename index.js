@@ -87,9 +87,10 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
- var months =finances.length
- console.log("Total Months: " + finances.length );
+console.log('Financial Analysis ' + '\n' + '------------------------' +'')
+ 
+var months =finances.length
+ console.log('Total Months: ' + finances.length );
 
 //  net totoal
 var netTotal = 0
